@@ -2,11 +2,11 @@
 SortedList implementation in Javascript
 
 To manage a sorted list of elements. Best use case: elements are frequently removed from the list or the property on which they are sorted can slightly change.
-Complexity in O(1) for removal.
+**Complexity in O(1) for removal**. (For list sizes above a few hundreads elements, consider using an avl tree instead, such as container-avltree). 
 
-Note: Benchmarks seem to show that iteration seem as fast as array iteration.
+Note: Benchmarks seem to show that **list iteration is as fast as array iteration** on all major browsers.
 
-To **instanciate** a new list:
+To **instantiate** a new list:
 ``` javascript
 // In this example, myList will hold elements sorted by zIndex
 function myComparisonFunction(a, b) {
@@ -43,10 +43,10 @@ To **move an element to the end of the list**:
 myList.moveToTheEnd(myObjectReference);
 ```
 
-To **iterate** through the elements:
+To **iterate** through the elements, in sorted order:
 ``` javascript
 for (var node = myList.first; node !== null; node = node.next) {
-	node.object += 1;
+	console.log(object);
 }
 ```
 
