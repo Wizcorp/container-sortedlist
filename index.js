@@ -1,17 +1,17 @@
 /**
  * SORTED LIST Class
+ * Elements are sorted at insertion
  *
  * @author Brice Chevalier
  *
- * @comparisonFunction {Function} comparison function that takes two parameters a and b and returns a number
+ * @params [comparisonFunction] {function} comparison function that takes two parameters a and b and returns a comparison number
  *
- * @desc Priority list data structure, elements remain sorted
  *
  *    Method                 Time Complexity
  *    ___________________________________
  *
  *    add                    O(n), O(1) if insertion at the beginning or at the end of the list
- *    remove                 O(1)
+ *    removeByReference      O(1)
  *    getFirst               O(1)
  *    getLast                O(1)
  *    popFirst               O(1)
@@ -94,7 +94,7 @@ SortedList.prototype.add = function (obj) {
 	return newNode;
 };
 
-SortedList.prototype.removeByRef = function (node) {
+SortedList.prototype.removeByReference = function (node) {
 	if (!node || node.container !== this) {
 		return node;
 	}
