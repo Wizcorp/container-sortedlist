@@ -252,6 +252,32 @@ SortedList.prototype.forEachReverse = function (processingFunc, params) {
 	}
 };
 
+SortedList.prototype.findReference = function (obj) {
+	if (this.first === null) {
+		return null;
+	}
+
+	var cmpFirst = this.cmpFunc(obj, this.first.object);
+	var cmpLast  = this.cmpFunc(obj, this.last.object);
+
+	var current;
+	if (cmpFirst + cmpLast < 0) {
+		// Searching from beginning of the list
+		current = this.first;
+		while (current !== null && obj !== current.object) {
+			current = current.next;
+		}
+	} else {
+		// Searching from end of the list
+		current = this.last;
+		while (current !== null && obj !== current.object) {
+			current = current.previous;
+		}
+	}
+
+	return current;
+};
+
 SortedList.prototype.reposition = function (node) {
 	if (node.container !== this) {
 		console.warn('[SortedList.reposition] Trying to reposition a node that does not belong to the list');
