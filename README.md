@@ -46,7 +46,7 @@ myList.moveToTheEnd(myObjectReference);
 To **iterate** through the elements, in sorted order:
 ``` javascript
 for (var node = myList.first; node !== null; node = node.next) {
-	console.log(object);
+	console.log(node.object);
 }
 ```
 
