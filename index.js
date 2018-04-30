@@ -335,3 +335,9 @@ SortedList.prototype.toArray = function () {
 
 	return objects;
 };
+
+SortedList.prototype[Symbol.iterator] = function* () {
+	for (var node = this.first; node !== null; node = node.next) {
+		yield node.object;
+	}
+};
